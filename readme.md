@@ -9,7 +9,7 @@ docker run --name mysql-standalone -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATA
 
  Con estos comandos estoy considerando que el jar del proyecto realizara un comando de maven clean package dentro del container
 
-FROM maven:3.6.3-jdk-11-slim AS stage1
+FROM maven:3.6.3-jdk-11-slim AS stage1  \n
 WORKDIR /root/
 COPY .  /root/proyect/
 RUN mvn -f /root/proyect/pom.xml clean package
