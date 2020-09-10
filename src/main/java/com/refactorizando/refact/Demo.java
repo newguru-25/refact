@@ -87,16 +87,19 @@ public class Demo {
 					storeValue += ERROR + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
 					if (this.logToDatabase) {
 						this.insertRow(statement, storeValue);
+						storeValue="";
 					}
 					logger.log(Level.SEVERE, messageText);
 				} else if (this.logError && this.logWarning) {
 //				registra  errores y advertencia
 					storeValue += ERROR + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
 					this.insertRow(statement, storeValue);
+					storeValue="";
 					logger.log(Level.SEVERE, messageText);
 					storeValue += WARNING + DateFormat.getDateInstance(DateFormat.LONG).format(new Date())
 							+ messageText;
 					this.insertRow(statement, storeValue);
+					storeValue="";
 					logger.log(Level.WARNING, messageText);
 				} else {
 					throw new BadExpresion(
@@ -109,17 +112,20 @@ public class Demo {
 					storeValue += MESSAGE + DateFormat.getDateInstance(DateFormat.LONG).format(new Date())
 							+ messageText;
 					this.insertRow(statement, storeValue);
+					storeValue="";
 					logger.log(Level.INFO, messageText);
 				}
 				if (this.logWarning) {
 					storeValue += WARNING + DateFormat.getDateInstance(DateFormat.LONG).format(new Date())
 							+ messageText;
 					this.insertRow(statement, storeValue);
+					storeValue="";
 					logger.log(Level.WARNING, messageText);
 				}
 				if (this.logError) {
 					storeValue += ERROR + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
 					this.insertRow(statement, storeValue);
+					storeValue="";
 					logger.log(Level.SEVERE, messageText);
 				}
 			}
