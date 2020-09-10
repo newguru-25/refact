@@ -9,18 +9,18 @@ docker run --name mysql-standalone -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATA
 
  Con estos comandos estoy considerando que el jar del proyecto realizara un comando de maven clean package dentro del container
 
-FROM maven:3.6.3-jdk-11-slim AS stage1  \n
-WORKDIR /root/
-COPY .  /root/proyect/
+FROM maven:3.6.3-jdk-11-slim AS stage1  <br>
+WORKDIR /root/<br>
+COPY .  /root/proyect/<br>
 RUN mvn -f /root/proyect/pom.xml clean package
 
- Ahora, si queremos levantar el jar en el container con estos comandos nos apoyamos.
+ Ahora, si queremos levantar el jar en el container con estos comandos nos apoyamos.<br>
 
-FROM adoptopenjdk/openjdk11:alpine-jre
-EXPOSE 7070
-COPY --from=stage1 /root/proyect/target/demo-docker-0.0.1-SNAPSHOT.jar demo-docker-0.0.1-SNAPSHOT.jar
+FROM adoptopenjdk/openjdk11:alpine-jre<br>
+EXPOSE 7070<br>
+COPY --from=stage1 /root/proyect/target/demo-docker-0.0.1-SNAPSHOT.jar demo-docker-0.0.1-SNAPSHOT.jar<br>
 ENTRYPOINT ["sh","-c","java -jar /demo-docker-0.0.1-SNAPSHOT.jar"]
-
+<br>
  Nota: Se debe realizar antes de generar la imagen el maven clean e install del proyecto
 
 
