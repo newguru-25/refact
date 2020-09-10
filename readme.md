@@ -1,4 +1,4 @@
-# Paso 1: Generar Imagen del Mysql 
+# Paso 1: levantar contenedor Mysql 
 
  Le estamos asignando nombre al contenedor, credenciales , base de datos y basado a que imagen se va levantar nuestro contenedor
 
