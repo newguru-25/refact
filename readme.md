@@ -14,7 +14,7 @@ WORKDIR /root/<br>
 COPY .  /root/proyect/<br>
 RUN mvn -f /root/proyect/pom.xml clean package
 
- Ahora, si queremos levantar el jar en el container con estos comandos nos apoyamos.<br>
+ Ahora, si queremos levantar el jar en el container con estos comandos nos apoyamos. (En nuestro caso no lo necesitamos)<br>
 
 FROM adoptopenjdk/openjdk11:alpine-jre<br>
 EXPOSE 7070<br>
