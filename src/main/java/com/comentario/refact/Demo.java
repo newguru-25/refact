@@ -133,20 +133,18 @@ public class Demo {
 //		usar la propiedad de la clase  quedando de la siguiente forma if (logWarning)
 		if (error && logError) {
 //	REFACTORIZACION :
-//			l += "error " + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
 			l = l + "error " + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
 		}
 //		error && logError Tienen el mismo valor automaticamente cuando la clase se contruye, como buena practica se recomienda
 //		usar la propiedad de la clase  quedando de la siguiente forma if (logWarning)
 		if (warning && logWarning) {//		
-//			l += "error " + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
+//			
 			l = l + "warning " + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
 		}
 //		message && logMessage Tienen el mismo valor automaticamente cuando la clase se contruye, como buena practica se recomienda
 //		usar la propiedad de la clase  quedando de la siguiente forma if (logMessage)
 		if (message && logMessage) {
 //			l=""
-//			l += "error " + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
 //			La variable l nunca se usa por lo tanto no tiene sentido establecer un valora dicha variable si nunca se usara
 			l = l + "message " + DateFormat.getDateInstance(DateFormat.LONG).format(new Date()) + messageText;
 		}
