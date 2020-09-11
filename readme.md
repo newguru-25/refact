@@ -1,4 +1,4 @@
-# Paso 1: Generar Imagen del Mysql 
+# Paso 1: levantar contenedor Mysql 
 
  Le estamos asignando nombre al contenedor, credenciales , base de datos y basado a que imagen se va levantar nuestro contenedor
 
@@ -14,7 +14,7 @@ WORKDIR /root/<br>
 COPY .  /root/proyect/<br>
 RUN mvn -f /root/proyect/pom.xml clean package
 
- Ahora, si queremos levantar el jar en el container con estos comandos nos apoyamos.<br>
+ Ahora, si queremos levantar el jar en el container con estos comandos nos apoyamos. (En nuestro caso no lo necesitamos)<br>
 
 FROM adoptopenjdk/openjdk11:alpine-jre<br>
 EXPOSE 7070<br>
